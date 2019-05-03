@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 #going to yum directory
 cd /etc/yum.repos.d/
