@@ -33,6 +33,7 @@ then
     export PGHOST=127.0.0.1
     echo "[#] Setting up postgresql envrionment..."
     #--------------------------
+    # Setting up postgres user password
     sudo sed -r -i "s|(^local\s*all\s*all\s*)peer$|\1md5|g" /etc/postgresql/9.6/main/pg_hba.conf
     sleep 2
     sudo sed -r -i "s|(^local\s*all\s*postgres\s*)peer$|\1md5|g" /etc/postgresql/9.6/main/pg_hba.conf
@@ -49,7 +50,7 @@ then
     echo "[+] Startup the database..."
     echo "[!] Don't forget to exit from postgresql user shell before doing further operations."
     sudo su postgres && /usr/lib/postgresql/9.6/bin/pg_ctl -D /var/lib/postgresql/9.6/main -l logfile start > /dev/null 2>&1
-    # sleep 10
+
     exit
 else
     echo "[-] PostgreSQL is already installed on this machine."
