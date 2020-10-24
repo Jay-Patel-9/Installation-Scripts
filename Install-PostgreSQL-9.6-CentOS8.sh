@@ -26,7 +26,7 @@ then
     sudo  sed -r -i "s|(^host\s*all\s*all\s*127.0.0.1/32\s*)ident$|\1md5|g" /var/lib/pgsql/9.6/data/pg_hba.conf
     sleep 2
     sudo  sed -r -i "s|(^host\s*all\s*all\s*::1/128\s*)ident$|\1md5|g" /var/lib/pgsql/9.6/data/pg_hba.conf
-    echo "[!] Please enter password for postgres user [Enter: postgres]"
+    echo "[!] Please enter password for postgres user: "
     sleep 2
     sudo -u postgres psql --command '\password postgres'
     sleep 2
