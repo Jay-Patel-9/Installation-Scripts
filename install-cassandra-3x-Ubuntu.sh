@@ -8,7 +8,7 @@ if [ $? -gt 1 ]; then
     java -version > /dev/null 2>&1
     if [ $? -gt 1 ]; then
     echo "[+] Installing JDK-8 dependency..."
-    sudo apt install openjdk-8-jre -y 
+    sudo apt install openjdk-8-jdk -y 
     else
     echo "[#] Java is already installed on this machine."
     fi
