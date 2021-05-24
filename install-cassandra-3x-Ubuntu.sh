@@ -34,7 +34,7 @@ if [ $? -gt 1 ]; then
 
     #add keys
     echo "[+] Adding key file..."
-    curl https://www.apache.org/dist/cassandra/KEYS | sudo apt-key add -
+    wget -q -O - https://www.apache.org/dist/cassandra/KEYS | sudo apt-key add -
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E91335D77E3E87CB
 
     #update
