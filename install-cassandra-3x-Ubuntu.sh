@@ -3,6 +3,7 @@
 #Chcking for existing cassandra installation..
 cqlsh --version > /dev/null 2>&1
 if [ $? -gt 1 ]; then 
+    sudo apt-get update -y
     sudo apt install apt-transport-https -y
     #install java
     java -version > /dev/null 2>&1
